@@ -16,7 +16,7 @@ export default {
           DEFAULT: "#828282",
           light: "#E0E0E0",
         },
-        white: "#FFFFFF",
+        white: "#E0E0E0",
       },
       indicator: {
         orange: "#F8B76B",

@@ -5,11 +5,11 @@
 @font-face {
     font-family: "Regular";
     src: local("Lato-Regular"),
-    url('./assets/fonts/Lato-Regular.ttf') format("truetype");
+    url('../src/assets/fonts/Lato-Regular.ttf') format("truetype");
 }
 
 @font-face {
     font-family: "Bold";
     src: local("Lato-Bold"),
-    url('./assets/fonts/Lato-Bold.ttf') format("truetype");
+    url('../src/assets/fonts/Lato-Bold.ttf') format("truetype");
 }
