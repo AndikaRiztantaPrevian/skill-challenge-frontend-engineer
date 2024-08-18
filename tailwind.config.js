@@ -38,6 +38,15 @@ export default {
           light: "#D2F2EA",
         },
       },
+      stikers: {
+        blue: "#E9F3FF",
+        orange: "#FDCFA4",
+        cream: "#F9E9C3",
+        greenlight: "#AFEBDB",
+        green: "#CBF1C2",
+        purple: "#CFCEF9",
+        purplelight: "F9E0FD",
+      }
     },
   },
   plugins: [],
