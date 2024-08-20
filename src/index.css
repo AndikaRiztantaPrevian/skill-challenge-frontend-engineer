@@ -13,3 +13,14 @@
     src: local("Lato-Bold"),
     url('../src/assets/fonts/Lato-Bold.ttf') format("truetype");
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+    border-radius: 5px;
+}

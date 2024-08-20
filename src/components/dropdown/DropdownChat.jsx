@@ -34,7 +34,7 @@ const DropdownChat = () => {
       {isDropdownChatClicked && (
         <div
           ref={dropdownRef}
-          className="border border-primary-gray-light rounded-[5px] absolute top-full left-0 mt-2 bg-white z-10 bg-[#FFFFFF]"
+          className="border border-primary-gray-light rounded-[5px] absolute top-full left-0 mt-2 bg-white z-10 bg-[#FFFFFF] shadow-md"
         >
           <ul className="font-latoRegular">
             <li className="text-primary-blue border-b-[1px] border-primary-gray-light px-4 py-2 cursor-pointer">

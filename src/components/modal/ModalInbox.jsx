@@ -8,7 +8,7 @@ const ModalInbox = ({ isOpen, onClose }) => {
   const [isChatOpenTwo, setIsChatOpenTwo] = useState(false);
   const [isChatOpenThree, setIsChatOpenThree] = useState(false);
 
-  React.useEffect(() => {
+  React.useEffect(() => { 
     if (isOpen) {
       setIsLoading(true);
       setTimeout(() => {
@@ -371,7 +371,7 @@ const ModalInbox = ({ isOpen, onClose }) => {
                 </>
               ) : (
                 <> 
-                <div className="sm:max-h-full overflow-y-auto">
+                <div className="sm:max-h-full overflow-y-auto pe-1">
                   {/* Contact List */}
                   <div className="py-[22px] border-b-[1px] border-primary-gray">
                     <div className="cursor-pointer flex items-center justify-between" onClick={handleContactClick} >
