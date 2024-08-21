@@ -14,7 +14,7 @@ function App() {
           <Header />
 
           {/* Content */}
-          <div className="bg-primary-gray-darken h-[92.75%] flex justify-end items-end p-5">
+          <div className="bg-[#292929] h-[92.75%] flex justify-end items-end p-5">
             {/* Menu Bubble */}
             <Menu />
           </div>

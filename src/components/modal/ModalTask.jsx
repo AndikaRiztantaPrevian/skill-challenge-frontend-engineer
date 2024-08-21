@@ -10,6 +10,16 @@ const ModalTask = ({ isOpen, onClose }) => {
   const [isExpandThree, setIsExpandThree] = useState(true);
   const [isExpandFour, setIsExpandFour] = useState(false);
   const [isExpandFive, setIsExpandFive] = useState(false);
+  
+  const [isExpandNewTask, setIsExpandNewTask] = useState(true);
+  const [isNewTask, setIsNewTask] = useState(false);
+
+  const handleNewTask = () => {
+    setIsNewTask(!isNewTask);
+  }
+  const handleExpandNewTask = () => {
+    setIsExpandNewTask(!isExpandNewTask);
+  }
 
   const handleExpandOneOpen = () => {
     setIsExpandOne(true);
@@ -48,7 +58,7 @@ const ModalTask = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      setIsLoading(false);
+      setIsLoading(true);
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);
@@ -80,7 +90,7 @@ const ModalTask = ({ isOpen, onClose }) => {
                         <DropdownFilter />
                     </div>
                     <div className="">
-                        <button id="buttonFormRepeater" type="button" className="bg-primary-blue font-latoBold text-[#FFFFFF] text-sm w-[100px] h-[40px] rounded-[5px]">New Task</button>
+                        <button onClick={handleNewTask} id="buttonFormRepeater" type="button" className="bg-primary-blue font-latoBold text-[#FFFFFF] text-sm w-[100px] h-[40px] rounded-[5px]">New Task</button>
                     </div>
                 </div>
                 {isLoading ? (
@@ -277,7 +287,7 @@ const ModalTask = ({ isOpen, onClose }) => {
                                     </>
                                 )}
                             </div>
-                            <div className="border-b-[1px] border-primary-gray py-[20px] mb-5">
+                            <div className={ isNewTask ? "border-b-[1px] border-primary-gray py-[20px]" : "border-b-[1px] border-primary-gray py-[20px] mb-5"}>
                                 {isExpandFive ? (
                                     <>
                                         <div className="header-form flex justify-between font-latoRegular text-primary-gray-darken text-sm mb-[16px]">
@@ -322,6 +332,53 @@ const ModalTask = ({ isOpen, onClose }) => {
                                     </>
                                 )}
                             </div>
+                            {isNewTask ? (
+                                <>
+                                    <div className="border-b-[1px] border-primary-gray py-[20px] mb-10">
+                                        {isExpandNewTask ? (
+                                            <>
+                                                <div className="header-form flex justify-between font-latoRegular text-primary-gray-darken text-sm mb-[16px]">
+                                                    <div className="flex gap-x-3">
+                                                        <input type="checkbox" className="w-[18px] h-[18px] mt-[2px] appearance-none border-[2px] border-primary-gray rounded-sm checked:bg-[#FFFFFF] checked:border-transparent focus:outline-none cursor-pointer"/>
+                                                        <input type="text" className="font-latoBold max-w-xs h-[40px] px-2 text-primary-gray-darken border border-primary-gray-light rounded-[5px] outline-none" placeholder="Type task title"/>
+                                                    </div>
+                                                    <div className="flex items-start gap-x-4">
+                                                        <button onClick={handleExpandNewTask} type="button" className="rotate-0 mt-[6px]"><Icons.ExpandIcon width={10} height={8} color={`#4F4F4F`} /></button>
+                                                        <DropdownDelete />
+                                                    </div>
+                                                </div>
+                                                <div className="body-form">
+                                                    <div className="flex items-center px-7 mb-[13px]">
+                                                        <Icons.ClockIcon width={20} height={20} color={`#2F80ED`} />
+                                                        <input type="date" className="w-[193px] h-[40px] px-2 ms-[18px] text-primary-gray-darken border-[1px] border-primary-gray-light rounded-[5px]" defaultValue="2021-06-02"/>
+                                                    </div>
+                                                    <div className="flex px-7">
+                                                        <div>
+                                                            <Icons.PencilIcon width={15} height={15} color={`#2F80ED`} />
+                                                        </div>
+                                                        <textarea type="text" className="ms-[23px] text-primary-gray-darken text-sm w-full h-fit outline-[1px] outline-primary-gray-light">No Description</textarea>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="header-form flex justify-between font-latoRegular text-primary-gray-darken text-sm mb-[16px]">
+                                                    <div className="flex gap-x-3">
+                                                        <input type="checkbox" className="w-[18px] h-[18px] mt-[2px] appearance-none border border-primary-gray rounded-sm checked:bg-[#FFFFFF] checked:border-transparent focus:outline-none cursor-pointer"/>
+                                                        <input type="text" className="font-latoBold max-w-xs h-[40px] px-2 text-primary-gray-darken border border-primary-gray-light rounded-[5px] outline-none" placeholder="Type task title"/>
+                                                    </div>
+                                                    <div className="flex items-start gap-x-4">
+                                                        <button onClick={handleExpandNewTask} type="button" className={isExpandNewTask ? "" : "rotate-180 mt-[6px]"}><Icons.ExpandIcon width={10} height={8} color={`#4F4F4F`} /></button>
+                                                        <DropdownDelete />
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                </>
+                            ) : (
+                                <></>
+                            )}
                         </div>
                     </>
                 )}
